@@ -76,7 +76,7 @@ if (isParamsValid()) {
   const awsDiskService = new AwsDiskService(org,
     serverName, diskPathsArray, region, logger);
 
-  const awsDiskMonitor = new AwsDiskMonitor(5000, awsDiskService, logger);
+  const awsDiskMonitor = new AwsDiskMonitor(delay, awsDiskService, logger);
   awsDiskMonitor.start();
 } else {
   logger.error('Params not valid.');
